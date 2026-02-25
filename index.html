@@ -79,7 +79,7 @@
         .card-info p { font-size: 0.9rem; color: #bbb; margin-bottom: 15px; }
         .card-info .tags { font-weight: 800; color: var(--cor-primaria); font-size: 0.8rem; text-transform: uppercase; }
 
-        /* --- Seção Detalhes (FUNDO PRETO / BOX BRANCO COM BORDA VERDE) --- */
+        /* --- Seção Detalhes --- */
         .detalhes-tecnicos { padding: 80px 0; background-color: #000; }
         .detalhes-grid { display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
         .planta-img { flex: 1; min-width: 300px; border: 2px solid #2D5A27; padding: 10px; border-radius: 15px; background: #1a1a1a; }
@@ -92,6 +92,12 @@
         .preco-box { background: var(--cor-clara); color: var(--cor-escura); padding: 25px; border-radius: 10px; border-left: 8px solid var(--cor-primaria); }
         .preco-box span { display: block; color: var(--cor-primaria); font-size: 0.9rem; font-weight: 800; text-transform: uppercase; }
         .preco-box h3 { font-size: 2.2rem; margin: 5px 0; font-weight: 800; }
+
+        /* --- Nova Seção de Metragem --- */
+        .metragem-detalhada { width: 100%; margin-top: 50px; text-align: center; border-top: 1px solid #222; padding-top: 40px; }
+        .metragem-detalhada h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--cor-primaria); }
+        .metragem-box-img { max-width: 600px; margin: 0 auto; border: 2px solid var(--cor-primaria); padding: 15px; border-radius: 15px; background: #1a1a1a; }
+        .metragem-info-texto { margin-top: 15px; font-weight: 600; color: #bbb; }
 
         /* --- Benefícios --- */
         .beneficios { padding: 80px 0; background-color: var(--cor-escura); text-align: center; }
@@ -141,27 +147,39 @@
     </section>
 
     <section id="especificacoes" class="detalhes-tecnicos">
-        <div class="container detalhes-grid">
-            <div class="planta-img">
-                <img src="https://i.postimg.cc/T24LV0wD/planta-1.jpg" alt="Planta Técnica Chalé 5x6" onerror="this.src='https://via.placeholder.com/600x400?text=Planta+Técnica+5x6m'">
-            </div>
-            <div class="info-tecnica">
-                <h2>Chalés A-Frame 5x6m</h2>
-                <p style="margin-bottom: 20px; font-weight: 600; color: var(--cor-primaria);">Construção Sustentável e Alto Padrão</p>
-                <ul>
-                    <li>Projeto Inteligente 5x6m</li>
-                    <li>1 Quarto com Mezanino Amplo</li>
-                    <li>Ideal para Moradia, Lazer ou Investimento</li>
-                    <li>Construção Rápida e Eficiente</li>
-                    <li>Atendemos toda a região do Paraná</li>
-                </ul>
-                <div class="preco-box">
-                    <span>Investimento</span>
-                    <h3>A partir de R$ 50.000</h3>
-                    <p>Construímos direto no seu terreno.</p>
+        <div class="container">
+            <div class="detalhes-grid">
+                <div class="planta-img">
+                    <img src="https://i.postimg.cc/T24LV0wD/planta-1.jpg" alt="Planta Técnica Chalé 5x6" onerror="this.src='https://via.placeholder.com/600x400?text=Planta+Técnica+5x6m'">
+                </div>
+                <div class="info-tecnica">
+                    <h2>Chalés A-Frame 5x6m</h2>
+                    <p style="margin-bottom: 20px; font-weight: 600; color: var(--cor-primaria);">Construção Sustentável e Alto Padrão</p>
+                    <ul>
+                        <li>Projeto Inteligente 5x6m</li>
+                        <li>1 Quarto com Mezanino Amplo</li>
+                        <li>Ideal para Moradia, Lazer ou Investimento</li>
+                        <li>Construção Rápida e Eficiente</li>
+                        <li>Atendemos toda a região do Paraná</li>
+                    </ul>
+                    <div class="preco-box">
+                        <span>Investimento</span>
+                        <h3>A partir de R$ 50.000</h3>
+                        <p>Construímos direto no seu terreno.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <div class="metragem-detalhada">
+                <h3>Metragem Detalhada do Modelo</h3>
+                <div class="metragem-box-img">
+                    <img src="https://i.postimg.cc/kgbJdzq5/Whats-App-Image-2026-02-25-at-19-06-34.jpg" alt="Metragem do Chalé 50m²" onerror="this.src='https://via.placeholder.com/900x500?text=Imagem+da+Metragem+Aqui'">
+                </div>
+                <div class="metragem-info-texto">
+                    <p>Metragem Total: 50m² | Área útil otimizada para máximo conforto.</p>
+                </div>
+            </div>
+            </div>
     </section>
 
     <section id="projetos" class="projetos-galeria">
@@ -172,32 +190,32 @@
             <div class="grid-projetos">
                 <div class="card-projeto">
                     <img src="https://i.postimg.cc/KzT4cSPF/projeto-1.jpg" alt="Projeto Compacto">
-<div class="card-info">
-    <span class="tags">Suíte Master • Mezanino • Design A-Frame</span>
-    <h3>Modelo Origin</h3>
-    <p>Nosso projeto de entrada, focado em elegância e rapidez de construção. Ideal para casais ou investimento em locação.</p>
-    <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+Modelo+Origin" class="btn">Ver Detalhes</a>
-</div>
+                    <div class="card-info">
+                        <span class="tags">Suíte Master • Mezanino • Design A-Frame</span>
+                        <h3>Modelo Origin</h3>
+                        <p>Nosso projeto de entrada, focado em elegância e rapidez de construção. Ideal para casais ou investimento em locação.</p>
+                        <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+Modelo+Origin" class="btn">Ver Detalhes</a>
+                    </div>
                 </div>
 
                 <div class="card-projeto">
                     <img src="https://i.postimg.cc/rmhJC4dj/projeto-4.jpg" alt="Projeto Família">
-<div class="card-info">
-        <span class="tags">Design Moderno • Deck Suspenso</span>
-        <h3>Modelo Horizon</h3>
-        <p>A união perfeita entre o minimalismo e a natureza. Com revestimento premium e deck panorâmico, é ideal para quem não abre mão da sofisticação.</p>
-        <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+modelo+Horizon" class="btn">Ver Detalhes</a>
-    </div>
+                    <div class="card-info">
+                        <span class="tags">Design Moderno • Deck Suspenso</span>
+                        <h3>Modelo Horizon</h3>
+                        <p>A união perfeita entre o minimalismo e a natureza. Com revestimento premium e deck panorâmico, é ideal para quem não abre mão da sofisticação.</p>
+                        <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+modelo+Horizon" class="btn">Ver Detalhes</a>
+                    </div>
                 </div>
 
                 <div class="card-projeto">
                     <img src="https://i.postimg.cc/CxVj87PY/projeto-2.jpg" alt="Projeto Premium">
-<div class="card-info">
-        <span class="tags">Luxo • Vidro Duplo</span>
-        <h3>Modelo Grand View</h3>
-        <p>A expressão máxima de sofisticação. Com uma fachada monumental inteiramente em vidro e acabamentos nobres, este projeto foi feito para quem exige o extraordinário em cada detalhe.</p>
-        <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+modelo+Grand+View" class="btn">Ver Detalhes</a>
-    </div>
+                    <div class="card-info">
+                        <span class="tags">Luxo • Vidro Duplo</span>
+                        <h3>Modelo Grand View</h3>
+                        <p>A expressão máxima de sofisticação. Com uma fachada monumental inteiramente em vidro e acabamentos nobres, este projeto foi feito para quem exige o extraordinário em cada detalhe.</p>
+                        <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+modelo+Grand+View" class="btn">Ver Detalhes</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -237,5 +255,4 @@
     </footer>
 
 </body>
-
 </html>
