@@ -6,7 +6,7 @@
     <title>Alto Chalés | O Seu Refúgio Particular</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* --- Variáveis de Cores Atualizadas (Verde em vez de Amarelo) --- */
+        /* --- Variáveis de Cores --- */
         :root {
             --cor-primaria: #2D5A27; /* Verde Floresta */
             --cor-primaria-hover: #1e3d1a;
@@ -41,7 +41,7 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- Cabeçalho (Fundo Branco preservado para a Logo) --- */
+        /* --- Cabeçalho --- */
         header { padding: 10px 0; background-color: var(--cor-clara); box-shadow: 0 2px 10px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
         .header-content { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 800; font-size: 1.2rem; color: var(--cor-escura); }
@@ -73,11 +73,25 @@
         .grid-projetos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .card-projeto { background: var(--cor-escura-card); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.5); transition: transform 0.3s; border-bottom: 5px solid var(--cor-primaria); }
         .card-projeto:hover { transform: translateY(-10px); }
-        .card-projeto img { width: 100%; height: 250px; object-fit: cover; border-radius: 0; }
+        
         .card-info { padding: 25px; text-align: left; }
         .card-info h3 { margin-bottom: 10px; font-size: 1.4rem; color: var(--cor-clara); }
         .card-info p { font-size: 0.9rem; color: #bbb; margin-bottom: 15px; }
         .card-info .tags { font-weight: 800; color: var(--cor-primaria); font-size: 0.8rem; text-transform: uppercase; }
+
+        /* --- Carrossel CSS --- */
+        .carousel-container { position: relative; width: 100%; height: 250px; overflow: hidden; }
+        .carousel-wrapper { display: flex; width: 100%; height: 100%; transition: transform 0.4s ease-in-out; }
+        .carousel-wrapper img { width: 100%; height: 100%; object-fit: cover; flex-shrink: 0; border-radius: 0; }
+        .carousel-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5); color: white; border: none;
+            padding: 8px 12px; cursor: pointer; font-size: 1.2rem; border-radius: 5px; z-index: 10;
+            transition: background 0.3s;
+        }
+        .carousel-btn:hover { background: rgba(0, 0, 0, 0.8); }
+        .carousel-btn.prev { left: 10px; }
+        .carousel-btn.next { right: 10px; }
 
         /* --- Seção Detalhes --- */
         .detalhes-tecnicos { padding: 80px 0; background-color: #000; }
@@ -179,7 +193,7 @@
                     <p>Metragem Total: 30m² | Área útil otimizada para máximo conforto.</p>
                 </div>
             </div>
-            </div>
+        </div>
     </section>
 
     <section id="projetos" class="projetos-galeria">
@@ -188,37 +202,57 @@
             <span class="subtitulo">Sua conexão com a natureza</span>
             
             <div class="grid-projetos">
+                
                 <div class="card-projeto">
-                    <img src="https://i.postimg.cc/KzT4cSPF/projeto-1.jpg" alt="Projeto Compacto">
+                    <div class="carousel-container" id="carrossel-modelo-1" data-index="0">
+                        <div class="carousel-wrapper">
+                            <img src="https://i.postimg.cc/rw52wPPr/1.jpg" alt="Modelo 1 - Foto 1">
+                            <img src="https://i.postimg.cc/SRHHy6LV/2.jpg" alt="Modelo 1 - Foto 2">
+                            <img src="https://i.postimg.cc/52BDVFXF/2-(2).jpg" alt="Modelo 1 - Foto 3">
+                            <img src="https://i.postimg.cc/633PnjYH/3.jpg" alt="Modelo 1 - Foto 4">
+                        </div>
+                        <button class="carousel-btn prev" onclick="moverCarrossel('carrossel-modelo-1', -1)">&#10094;</button>
+                        <button class="carousel-btn next" onclick="moverCarrossel('carrossel-modelo-1', 1)">&#10095;</button>
+                    </div>
                     <div class="card-info">
-                        <span class="tags">Suíte Master • Mezanino • Design A-Frame</span>
-                        <h3>Modelo Origin</h3>
-                        <p>Nosso projeto de entrada, focado em elegância e rapidez de construção. Ideal para casais ou investimento em locação.</p>
-                        <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+Modelo+Origin" class="btn">Ver Detalhes</a>
+                        <span class="tags">30m² • 6m Altura • Clássico</span>
+                        <h3>Modelo 1</h3>
+                        <p>Design inteligente de 30m² e 6m de altura. Construído com estrutura em eucalipto e forro em pinus, garantindo excelente ventilação e integração com a natureza.</p>
+                        <p style="color: var(--cor-primaria); font-weight: 600;">• 1 quarto • 1 banheiro</p>
+                        <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+Modelo+1" class="btn">Ver Detalhes</a>
                     </div>
                 </div>
 
                 <div class="card-projeto">
-                 <img src="https://i.postimg.cc/rmhJC4dj/projeto-4.jpg" alt="Projeto Família" style="width:200px; height:auto;">
+                    <img src="https://i.postimg.cc/zBGc1thC/modelo-2.jpg" alt="Modelo 2" style="width:100%; height:250px; object-fit:cover;">
                     <div class="card-info">
                         <span class="tags">Design Moderno • Deck Suspenso</span>
-                        <h3>Modelo Horizon</h3>
-                        <p>A união perfeita entre o minimalismo e a natureza. Com revestimento premium e deck panorâmico, é ideal para quem não abre mão da sofisticação.</p>
-                        <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+modelo+Horizon" class="btn">Ver Detalhes</a>
+                        <h3>Modelo 2</h3>
+                        <p>Refúgio compacto com mezanino. Estrutura robusta com eucalipto e forro de pinus, projetada para quem valoriza a convivência ao ar livre e um visual contemporâneo.</p>
+                        <p style="color: var(--cor-primaria); font-weight: 600;">• 1 quarto • 1 banheiro</p>
+                        <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+modelo+2" class="btn">Ver Detalhes</a>
                     </div>
                 </div>
 
                 <div class="card-projeto">
-<img src="https://i.postimg.cc/Kv2p3q0j/Whats-App-Image-2026-03-12-at-13-22-43.jpg" 
-     alt="Projeto Família"
-     style="width:100%; height:250px; object-fit:contain;">
+                    <div class="carousel-container" id="carrossel-modelo-3" data-index="0">
+                        <div class="carousel-wrapper">
+                            <img src="https://i.postimg.cc/WtRMn8P2/modelo-3.jpg" alt="Modelo 3 - Vista Externa">
+                            <img src="https://i.postimg.cc/fRNPWjSm/modelo-3-1.jpg" alt="Modelo 3 - Lateral">
+                            <img src="https://i.postimg.cc/k5jYy01k/modelo-3-2.jpg" alt="Modelo 3 - Detalhe Deck">
+                        </div>
+                        <button class="carousel-btn prev" onclick="moverCarrossel('carrossel-modelo-3', -1)">&#10094;</button>
+                        <button class="carousel-btn next" onclick="moverCarrossel('carrossel-modelo-3', 1)">&#10095;</button>
+                    </div>
                     <div class="card-info">
-                        <span class="tags">Chalé A-Frame</span>
-                        <h3>DESIGN A-FRAME • VIDRO PANORÂMICO</h3>
-                        <p>Um refúgio moderno que combina arquitetura imponente e aconchego. Com fachada em vidro panorâmico, estrutura em madeira e iluminação acolhedora, este chalé foi projetado para integrar conforto, natureza e sofisticação em cada detalhe.</p>
-                        <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+modelo+Grand+View" class="btn">Ver Detalhes</a>
+                        <span class="tags">Luxo A-Frame • Deck Panorâmico</span>
+                        <h3>Modelo 3</h3>
+                        <p>A evolução do conforto. Este modelo destaca-se pela fachada imponente em vidro e um amplo deck frontal em madeira, ideal para contemplação. Acabamento premium que redefine o conceito de morar bem.</p>
+                        <p style="color: var(--cor-primaria); font-weight: 600;">• 1 quarto • 1 banheiro</p>
+                        <a href="https://wa.me/5546999177848?text=Quero+saber+mais+sobre+o+modelo+3" class="btn">Ver Detalhes</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -249,15 +283,31 @@
             <p>Solicite seu orçamento agora pelo WhatsApp.</p>
             <br>
             <a href="https://wa.me/5546999177848" class="btn" target="_blank" style="background-color: #25d366; color: white;">Chamar no WhatsApp</a>
-            
             <div class="rodape-info">
                 <p>&copy; 2026 Alto Chalés. Atendendo todo o Paraná.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        function moverCarrossel(id, direcao) {
+            const container = document.getElementById(id);
+            const wrapper = container.querySelector('.carousel-wrapper');
+            const totalImagens = wrapper.querySelectorAll('img').length;
+            
+            let indexAtual = parseInt(container.getAttribute('data-index'));
+            indexAtual += direcao;
+            
+            if (indexAtual < 0) {
+                indexAtual = totalImagens - 1;
+            } else if (indexAtual >= totalImagens) {
+                indexAtual = 0;
+            }
+            
+            container.setAttribute('data-index', indexAtual);
+            const deslocamento = -(indexAtual * 100);
+            wrapper.style.transform = `translateX(${deslocamento}%)`;
+        }
+    </script>
 </body>
 </html>
-
-
-
